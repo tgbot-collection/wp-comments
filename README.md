@@ -21,9 +21,9 @@ git clone https://github.com/BennyThink/wp-comments-tgbot
 
 Then navigate to your Plugin and enable WordPress Comments Telegram Bot.
 ## 2. Create bot and find your user id
-Talk to @BotFather, create your own bot and copy bot token.
+Talk to [@BotFather](https://t.me/BotFather), create your own bot and copy bot token.
 
-Talk to @@get_id_bot, get your own user id.
+Talk to [@get_id_bot](https://t.me/get_id_bot), get your own user id.
 
 ## 3. Edit configuration on WordPress
 Fill in your token, user id and proxy if needed.
@@ -61,7 +61,7 @@ chmod u+x /path/to/bot
 ```
 ### cli arguments
 ```text
- -c file  set configuration file (default "config.json")
+  -c file  set configuration file (default "config.json")
   -f      force to run even on http sites.
   -h      this help
   -v      show version and exit
