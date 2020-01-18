@@ -1,5 +1,8 @@
 # wp-comments-tgbot
-A Telegram Bot for WordPress comments!
+A Telegram Bot for WordPress comments! Simple and fast reply to your comments!
+![](pics/1.png)
+
+![](pics/2.jpg)
 
 # Warning
 By using this plugin, you agreed to open Basic Auth on your WordPress.
