@@ -1,0 +1,14 @@
+[Unit]
+Description=A Telegram Bot for WordPress comments.
+After=network.target network-online.target nss-lookup.target
+
+[Service]
+User=nobody
+
+Restart=on-failure
+Type=simple
+WorkingDirectory=/opt/bin
+ExecStart=/opt/bin/bot
+
+[Install]
+WantedBy=multi-user.target
