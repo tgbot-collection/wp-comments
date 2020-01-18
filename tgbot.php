@@ -26,6 +26,7 @@ Author URI: http://www.bennythink.com
 */
 //This plugin is designed for WordPress
 
+require "basic-auth.php";
 
 date_default_timezone_set( 'Asia/Shanghai' );
 
@@ -73,6 +74,7 @@ See all comments here:
 
 Permanent  url: %s
 
+id: %s,%s
 ",
 		a_link( $comment_data["comment_website"], get_bloginfo() ),
 		$comment_data["comment_post_title"],
@@ -81,7 +83,8 @@ Permanent  url: %s
 		a_link( $comment_data["comment_author_url"] ),
 		$comment_data["comment_content"],
 		a_link( $comment_data['post_link'] . '#comments' ),
-		a_link( $comment_data['comment_permlink'] )
+		a_link( $comment_data['comment_permlink'] ),
+		$comment_data["comment_ID"], $comment_data["comment_post_ID"]
 	);
 	$postdata = http_build_query( array( 'chat_id' => $uid, 'parse_mode' => "html", "text" => $text ) );
 	$opts     = array(
