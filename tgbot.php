@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: WordPress Comments Telegram Bot
-Plugin URI: https://github.com/BennyThink/MemorialDay
-Description: A telegram bot
+Plugin URI: https://github.com/BennyThink/wp-comments-tgbot
+Description: A telegram bot for comments!
 Version: 0.0.1
 Author: Benny
 Author URI: http://www.bennythink.com
