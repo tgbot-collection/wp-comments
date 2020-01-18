@@ -99,7 +99,7 @@ func replyComment(msg, reply string, conf config) (result string) {
 		Parent          string `json:"parent"`
 		Post            string `json:"post"`
 	}
-	reply += "\n\n\t\t" + conf.Tail
+	reply += conf.Tail
 	g := strings.Split(strings.Split(msg, "id: ")[1], ",")
 	pid, cid := g[0], g[1]
 	post := postFormat{
