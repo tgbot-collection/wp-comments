@@ -5,7 +5,7 @@ A Telegram Bot for WordPress comments! Simple and fast reply to your comments!
 ![](pics/2.jpg)
 
 # Warning
-By using this plugin, you agreed to open Basic Auth on your WordPress.
+By using this plugin, you agree to open Basic Auth on your WordPress.
 
 Please setup a complex passphrase for your WordPress
 
@@ -69,6 +69,20 @@ chmod u+x /path/to/bot
   -h      this help
   -v      show version and exit
 ```
+# Q&A
+## 1. No email notifications while replying by telegram bot?
+Potentially bug about your theme/plugin. Try to find the code of sending email.
+
+You may find some hook like this:
+``php
+add_action('comment_post', 'comment_mail_notify');	
+``
+Change `comment_post` to `wp_insert_comment` will solve this issue.
+
+[Reference commit](https://github.com/BennyThink/WordPressGit/commit/c64a3a5e70e10239ba9217debf16a075e2a13874)
+
+# Credits
+* [Basic Auth](https://github.com/WP-API/Basic-Auth)
 
 # License
 GPLv2
