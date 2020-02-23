@@ -161,7 +161,9 @@ func bot(conf config) {
 		} else {
 			comment := m.ReplyTo.Text
 			reply := m.Text
+			b.Notify(m.Sender, "upload_document")
 			resp := replyComment(comment, reply, conf)
+			b.Notify(m.Sender, "typing")
 			b.Send(owner, resp)
 
 		}
