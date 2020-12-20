@@ -15,6 +15,7 @@ import (
 	"strings"
 	"time"
 )
+import "github.com/tgbot-collection/tgbot_ping"
 
 const version = "0.0.1"
 
@@ -167,6 +168,11 @@ func bot(conf config) {
 			b.Send(owner, resp)
 
 		}
+	})
+	b.Handle("/ping", func(m *tb.Message) {
+		_ = b.Notify(m.Chat, tb.Typing)
+		info := tgbot_ping.GetRuntime("botsrunner_wp-comments_1", "WordPress Comments Bot", "html")
+		_, _ = b.Send(m.Chat, info, &tb.SendOptions{ParseMode: tb.ModeHTML})
 	})
 
 	b.Start()
