@@ -1,8 +1,10 @@
 FROM golang:alpine as builder
 
-RUN apk update && apk add git make ca-certificates && \
-git clone https://github.com/tgbot-collection/wp-comments-tgbot /build && \
-cd /build && make static
+RUN apk update && apk add  --no-cache make ca-certificates && mkdir /build
+COPY go.mod /build
+RUN cd /build && go mod download
+COPY . /build
+RUN cd /build && make static
 
 
 FROM scratch
