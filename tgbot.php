@@ -27,7 +27,7 @@ Author URI: http://www.bennythink.com
 //This plugin is designed for WordPress
 
 require "basic-auth.php";
-require "IpLocation.php";
+require "IPLocation/IpLocation.php";
 
 
 date_default_timezone_set('Asia/Shanghai');
@@ -49,16 +49,15 @@ function show_message_function($comment_ID, $comment_approved, $comment_obj)
     }
 }
 
+
 function convertIP2Location($ip_addr)
 {
-    $data = \itbdw\Ip\IpLocation::getLocation($ip_addr);
-    if (isset($data["error"])) {
-        $location = "";
+    $data = IpLocation::getLocation($ip_addr);
+    if (isset($data["area"])) {
+        return $data["area"];
     } else {
-        $location = $data["area"];
+        return "";
     }
-    return $location;
-
 }
 
 function sendMessage($comment_data, $options)
