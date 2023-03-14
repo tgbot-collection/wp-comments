@@ -120,8 +120,6 @@ id: %s,%s
     $context = stream_context_create($opts);
 
     file_get_contents($api, false, $context);
-    file_put_contents('1.txt', print_r($text, true));
-
 
 }
 
