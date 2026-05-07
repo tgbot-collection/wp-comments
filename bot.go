@@ -133,7 +133,7 @@ func replyComment(msg, reply string, conf config) (result string) {
 		result = "ok"
 	} else {
 		json.NewDecoder(resp.Body).Decode(&body)
-		result = body.Message
+		result = fmt.Sprintf("ok? %s",body.Message)
 	}
 	return
 
